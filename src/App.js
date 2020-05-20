@@ -1,7 +1,8 @@
 import React from "react";
+import Homepage from "./views/homepage/homepage.js";
 
 function App() {
-  return <div>test</div>;
+  return <Homepage />;
 }
 
 export default App;
