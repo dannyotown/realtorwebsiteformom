@@ -6,8 +6,8 @@ import HomeBody from "./components/HomeBody";
 function HomePage() {
   return (
     <>
-      <HomeImage />
       <Navbar />
+      <HomeImage />
       <HomeBody />
     </>
   );

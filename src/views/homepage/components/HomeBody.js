@@ -1,15 +1,27 @@
 import React from "react";
-import { MDBRow, MDBContainer } from "mdbreact";
+import { MDBRow, MDBContainer, MDBInput, MDBCard } from "mdbreact";
 import HouseCard from "./HomeBody/HouseCards";
-import FooterPage from "./Footer/Footer";
+import FooterPage from "../../../components/footer/Footer";
+import MapBox from "./Mapbox/MapBox";
+import housingInfo from "../components/HomeBody/testdata";
 
 function HomeBody() {
   return (
     <>
-      <MDBContainer className="mt-5 mb-5">
-        <h1 className="text-center mb-5">Houses For Sale</h1>
+      <MDBCard className="mb-5 bg-light">
+        <h2 className="text-center mt-5">Search For Houses</h2>
+        <div className="mx-auto w-75">
+          <MDBInput outline size="lg" className="bg-white" />
+        </div>
+      </MDBCard>
+      <MDBContainer>
         <MDBRow>
-          <HouseCard />
+          {housingInfo.map((info, index) => {
+            return <HouseCard housingInfo={info} key={index} />;
+          })}
+        </MDBRow>
+        <MDBRow className="mt-5 mb-5">
+          <MapBox />
         </MDBRow>
       </MDBContainer>
       <FooterPage />
