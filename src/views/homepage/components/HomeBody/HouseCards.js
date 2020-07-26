@@ -1,9 +1,9 @@
 import React from "react";
 import { MDBCard, MDBCardBody, MDBCardText, MDBCol } from "mdbreact";
 
-const HouseCard = ({ housingInfo }) => {
+const HouseCard = React.memo(({ housingInfo }) => {
   return (
-    <MDBCol style={{ maxWidth: "22rem" }}>
+    <MDBCol sm="6" className="mx-auto mb-4" style={{ maxWidth: "22rem" }}>
       <MDBCard>
         <img
           className="img-fluid"
@@ -24,6 +24,6 @@ const HouseCard = ({ housingInfo }) => {
       </MDBCard>
     </MDBCol>
   );
-};
+});
 
 export default HouseCard;
