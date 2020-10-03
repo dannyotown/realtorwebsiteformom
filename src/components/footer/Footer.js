@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-const FooterPage = () => {
+const Footer = () => {
   return (
     <MDBFooter color="blue" className="font-small pt-4 mt-4 gbBlueBg">
       <MDBContainer fluid className="text-center text-md-left gbBlueBg">
@@ -42,4 +42,4 @@ const FooterPage = () => {
   );
 };
 
-export default FooterPage;
+export default Footer;

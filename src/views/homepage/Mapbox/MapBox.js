@@ -27,7 +27,8 @@ const MapBox = () => {
               {
                 type: "Feature",
                 properties: {
-                  description: "<strong> Town House! </strong>",
+                  description:
+                    "<strong> Town House! </strong> <br> <a href='google.com'>test</a>",
                 },
                 geometry: {
                   type: "Point",
@@ -39,12 +40,15 @@ const MapBox = () => {
         });
         map.addLayer({
           id: "places",
-          type: "symbol",
+          type: "circle",
           source: "places",
-          layout: {
-            "icon-image": "rocket-15",
-            "icon-allow-overlap": true,
-            "icon-size": 1.5,
+          paint: {
+            "circle-radius": 5,
+            "circle-color": {
+              property: "FeatureCollection", // geojson property based on which you want too change the color
+              type: "categorical",
+              stops: [["type1", "#fbb03b"]],
+            },
           },
         });
         map.on("click", "places", function (e) {

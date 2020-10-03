@@ -1,5 +1,5 @@
 import React from "react";
-import homepagebg from "../../../imgs/homepagebg.jpg";
+import homepagebg from "../../imgs/homepagebg.jpg";
 import "./styling/HomeImage.css";
 import { MDBCard } from "mdbreact";
 
