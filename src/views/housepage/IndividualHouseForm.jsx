@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBInput, MDBIcon } from "mdbreact";
-import "./styling/HousePageStyling.css";
 const IndividualHouseForm = () => {
   return (
     <>
