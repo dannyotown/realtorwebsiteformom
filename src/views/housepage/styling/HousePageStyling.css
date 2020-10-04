@@ -1,0 +1,15 @@
+.viewMoreImages {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  border: none;
+  height: 2.5rem;
+  font-weight: bold;
+}
+.questionButton {
+  border-radius: 5px;
+  border-color: #012169;
+  background-color: white;
+  color: #012169;
+  font-size: 1.1rem;
+}

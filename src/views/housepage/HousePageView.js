@@ -1,12 +1,17 @@
 import React from "react";
-import HouseBox from "./HouseBox";
-import HouseInfo from "./HouseInfo";
-
+import IndividualHouseImage from "./IndividualHouseImage";
+import { MDBContainer } from "mdbreact";
+import IndividualHouseInfo from "./IndividualHouseInfo";
+import "../../components/globalStyles.css";
 function HousePage() {
   return (
     <>
-      <HouseBox />
-      <HouseInfo />
+      <section className="my-5">
+        <MDBContainer>
+          <IndividualHouseImage />
+          <IndividualHouseInfo />
+        </MDBContainer>
+      </section>
     </>
   );
 }
