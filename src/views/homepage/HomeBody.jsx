@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { MDBRow, MDBContainer, MDBInput, MDBCard } from "mdbreact";
 import HouseCard from "./HomeBody/HouseCards";
-import MapBox from "./Mapbox/MapBox";
 import housingInfo from "./HomeBody/testdata";
+import MyMapComponent from "./GoogleMap/GoogleMap";
 
 function HomeBody() {
   const [housing, setHousing] = useState(housingInfo);
@@ -52,8 +52,8 @@ function HomeBody() {
             return <HouseCard housingInfo={info} key={index} />;
           })}
         </MDBRow>
-        <MDBRow className="mt-5 mb-5">
-          <MapBox />
+        <MDBRow className="mt-5 mb-5 align-items-center justify-content-center">
+          <MyMapComponent isMarkerShown />
         </MDBRow>
       </MDBContainer>
     </>
