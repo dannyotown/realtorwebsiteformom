@@ -9,16 +9,16 @@ const HouseCard = React.memo(({ housingInfo }) => {
           className="img-fluid"
           alt="Home"
           src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          waves
+          waves="true"
         />
         <MDBCardBody>
-          <h5>{housingInfo.Street}</h5>
+          <h5>{housingInfo.address}</h5>
           <MDBCardText>
-            <strong>City:</strong> {housingInfo.City}
+            <strong>City:</strong> {housingInfo.city}
             <br />
-            <strong>State:</strong> {housingInfo.State}
+            <strong>State:</strong> {housingInfo.state_abbreviation}
             <br />
-            <strong>ZipCode:</strong> {housingInfo.ZipCode}
+            <strong>ZipCode:</strong> {housingInfo.zip_code}
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>

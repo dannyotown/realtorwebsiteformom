@@ -23,8 +23,9 @@ export const MyMapComponent = compose(
   >
     {props.isMarkerShown && (
       <>
-        <Marker position={{ lat: 38.77808, lng: -90.72571 }} />
-        <Marker position={{ lat: 38.83328, lng: -90.49112 }} />
+        {props.filterHousing.map((house) => {
+          return <Marker position={{ lat: house.lat, lng: house.long }} />;
+        })}
       </>
     )}
   </GoogleMap>

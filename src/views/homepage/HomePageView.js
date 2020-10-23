@@ -2,11 +2,11 @@ import React from "react";
 import HomeImage from "./HomeImage";
 import HomeBody from "./HomeBody";
 
-function HomePage() {
+function HomePage({ houses }) {
   return (
     <>
       <HomeImage />
-      <HomeBody />
+      <HomeBody houses={houses} />
     </>
   );
 }

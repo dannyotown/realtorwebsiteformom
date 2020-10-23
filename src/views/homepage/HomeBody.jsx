@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { MDBRow, MDBContainer, MDBInput, MDBCard } from "mdbreact";
-import HouseCard from "./HomeBody/HouseCards";
-import housingInfo from "./HomeBody/testdata";
-import MyMapComponent from "./GoogleMap/GoogleMap";
+import HouseCard from "./HouseCards";
+import MyMapComponent from "./GoogleMap.jsx";
 
-function HomeBody() {
-  const [housing, setHousing] = useState(housingInfo);
-  const [filterHousing, setFilterHousing] = useState(housingInfo);
-  const [getDropDown, setDropDown] = useState("ZipCode");
+function HomeBody({ houses }) {
+  const housing = houses;
+  const [filterHousing, setFilterHousing] = useState(houses);
+  const [getDropDown, setDropDown] = useState("zip_code");
 
   const onSearch = (e) => {
     const data = housing.filter((house) => {
@@ -48,12 +47,12 @@ function HomeBody() {
       </MDBCard>
       <MDBContainer>
         <MDBRow>
-          {filterHousing.map((info, index) => {
-            return <HouseCard housingInfo={info} key={index} />;
+          {filterHousing.map((info) => {
+            return <HouseCard housingInfo={info} key={info.property_id} />;
           })}
         </MDBRow>
         <MDBRow className="mt-5 mb-5 align-items-center justify-content-center">
-          <MyMapComponent isMarkerShown />
+          <MyMapComponent isMarkerShown filterHousing={filterHousing} />
         </MDBRow>
       </MDBContainer>
     </>
