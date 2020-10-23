@@ -15,7 +15,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <MDBNavbar dark expand="md">
+    <MDBNavbar dark expand="md" className="position-sticky">
       <MDBNavbarBrand>
         <strong className="gbBlueFont">Jeanne Town</strong>
       </MDBNavbarBrand>

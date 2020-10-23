@@ -24,7 +24,12 @@ export const MyMapComponent = compose(
     {props.isMarkerShown && (
       <>
         {props.filterHousing.map((house) => {
-          return <Marker position={{ lat: house.lat, lng: house.long }} />;
+          return (
+            <Marker
+              position={{ lat: house.lat, lng: house.long }}
+              key={house.property_id}
+            />
+          );
         })}
       </>
     )}

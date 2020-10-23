@@ -5,32 +5,45 @@ import Navbar from "./components/navbar/navbar.js";
 import Homepage from "./views/homepage/HomePageView.js";
 import HousePage from "./views/housepage/HousePageView.js";
 import api from "./components/axios";
+import Loading from "./components/loading/loading";
 
 function App() {
-  const [houses, setHouses] = useState(null);
+  const [properties, setProperties] = useState(null);
+  const [dataLoaded, setDataLoaded] = useState(false);
   useEffect(() => {
-    const fetchHouses = async () => {
+    const fetchProperties = async () => {
       try {
         const { data } = await api.get("/property");
-        setHouses(data);
+        setProperties(data);
+        setDataLoaded(true);
       } catch (err) {
         console.log(err);
       }
     };
     setTimeout(() => {
-      fetchHouses();
+      fetchProperties();
     }, 2000);
   }, []);
 
   return (
     <>
-      {!houses ? (
-        <div>loading</div>
+      {!properties && !dataLoaded ? (
+        <Loading />
       ) : (
         <>
           <Navbar />
-          <Route exact path="/" render={() => <Homepage houses={houses} />} />
-          <Route exact path="/house" component={HousePage} />
+          <Route
+            exact
+            path="/"
+            render={() => <Homepage houses={properties} />}
+          />
+          <Route
+            exact
+            path="/property/:id"
+            render={(props) => (
+              <HousePage properties={properties} props={props} />
+            )}
+          />
           <Footer />
         </>
       )}

@@ -1,12 +1,15 @@
+import { MDBCard } from "mdbreact";
 import React from "react";
 
-const IndividualHouseImage = () => {
+const IndividualHouseImage = ({ getProperty }) => {
   return (
-    <img
-      className="d-block w-100"
-      src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-      alt="Home"
-    />
+    <MDBCard>
+      <img
+        className="d-block w-auto"
+        src={`https://djangorealtorbackend.s3.us-east-2.amazonaws.com/${getProperty.photos}`}
+        alt="Home"
+      />
+    </MDBCard>
   );
 };
 
