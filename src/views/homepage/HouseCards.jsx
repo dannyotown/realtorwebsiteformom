@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HouseCard = React.memo(({ housingInfo }) => {
   return (
-    <Link to={`/property/${housingInfo.property_id}`}>
+    <Link to={`/property/${housingInfo.property_id}`} className="mx-auto">
       <MDBCol sm="6" className="mx-auto mb-4" style={{ maxWidth: "22rem" }}>
         <MDBCard>
           <img
