@@ -20,7 +20,7 @@ function IndividualHouseInfo({ getProperty }) {
                 <MDBIcon icon="bed" /> {getProperty.number_of_bedrooms} Beds
               </MDBCol>
               <MDBCol lg="2" md="4">
-                <MDBIcon icon="bath" /> {getProperty.number_of_baths} Baths
+                <MDBIcon icon="bath" /> {getProperty.number_of_bathrooms} Baths
               </MDBCol>
               <MDBCol lg="4" md="8">
                 <MDBIcon icon="shoe-prints" />{" "}

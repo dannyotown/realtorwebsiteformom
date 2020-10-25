@@ -1,12 +1,7 @@
 import React from "react";
 import { compose, withProps } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
-
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
+import CustomMarker from "./GoogleMarker";
 export const MyMapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP}&v=3.exp&libraries=geometry,drawing,places`,
@@ -25,9 +20,10 @@ export const MyMapComponent = compose(
       <>
         {props.filterHousing.map((house) => {
           return (
-            <Marker
-              position={{ lat: house.lat, lng: house.long }}
+            <CustomMarker
               key={house.property_id}
+              house={house}
+              history={props.history}
             />
           );
         })}

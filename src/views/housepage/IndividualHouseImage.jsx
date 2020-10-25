@@ -6,7 +6,7 @@ const IndividualHouseImage = ({ getProperty }) => {
     <MDBCard>
       <img
         className="d-block w-auto"
-        src={`https://djangorealtorbackend.s3.us-east-2.amazonaws.com/${getProperty.photos}`}
+        src={`https://djangorealtorbackend.s3.us-east-2.amazonaws.com/${getProperty.photo1}`}
         alt="Home"
       />
     </MDBCard>

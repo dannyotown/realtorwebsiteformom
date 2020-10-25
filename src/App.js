@@ -35,7 +35,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => <Homepage houses={properties} />}
+            render={(props) => <Homepage houses={properties} props={props} />}
           />
           <Route
             exact

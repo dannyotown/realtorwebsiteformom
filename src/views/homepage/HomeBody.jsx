@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MDBRow, MDBContainer, MDBInput, MDBCard } from "mdbreact";
 import HouseCard from "./HouseCards";
 import MyMapComponent from "./GoogleMap.jsx";
+import { useHistory } from "react-router-dom";
 
 function HomeBody({ houses }) {
   const housing = houses;
@@ -17,7 +18,7 @@ function HomeBody({ houses }) {
   const dropDownOnChange = (e) => {
     setDropDown(e.target.value);
   };
-
+  const history = useHistory();
   return (
     <>
       <MDBCard className="mb-5 bg-light">
@@ -52,7 +53,11 @@ function HomeBody({ houses }) {
           })}
         </MDBRow>
         <MDBRow className="mt-5 mb-5 align-items-center justify-content-center">
-          <MyMapComponent isMarkerShown filterHousing={filterHousing} />
+          <MyMapComponent
+            isMarkerShown
+            filterHousing={filterHousing}
+            history={history}
+          />
         </MDBRow>
       </MDBContainer>
     </>
