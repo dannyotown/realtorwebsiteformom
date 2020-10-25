@@ -18,6 +18,7 @@ export const CustomMarker = ({ house, history }) => {
       onMouseOut={handleMouseExit}
       position={{ lat: house.lat, lng: house.long }}
       key={house.property_id}
+      animation={window.google.maps.Animation.DROP}
     >
       {getInfo && (
         <InfoWindow>

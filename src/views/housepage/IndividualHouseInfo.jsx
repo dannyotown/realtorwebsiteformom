@@ -1,6 +1,7 @@
 import { MDBCard, MDBIcon, MDBCol, MDBRow } from "mdbreact";
 import React from "react";
 import IndividualHouseForm from "./IndividualHouseForm";
+import ImagesModal from "./ImagesModal";
 
 function IndividualHouseInfo({ getProperty }) {
   return (
@@ -54,7 +55,7 @@ function IndividualHouseInfo({ getProperty }) {
             </MDBCol>
           </MDBRow>
         </div>
-        <button className="w-100 viewMoreImages gbBlueBg">View Images</button>
+        <ImagesModal getProperty={getProperty} />
       </MDBCard>
     </>
   );
