@@ -1,29 +1,31 @@
 import { MDBCard, MDBIcon, MDBCol, MDBRow } from "mdbreact";
 import React from "react";
+import ImageSection from "./ImagesSection";
 import IndividualHouseForm from "./IndividualHouseForm";
-import ImagesModal from "./ImagesModal";
+import IndividualHouseImage from "./IndividualHouseImage";
 
 function IndividualHouseInfo({ getProperty }) {
   return (
     <>
       <MDBCard className="w-100 mx-auto">
         <div className="p-4">
-          <h2 className="mb-5 mt-3 text-center">{getProperty.address}</h2>
+          <IndividualHouseImage getProperty={getProperty} />
+          <h2 className="mb-5 mt-5 text-center">{getProperty.address}</h2>
           <MDBCol>
             <MDBRow className="text-center">
-              <MDBCol lg="4" md="8">
+              <MDBCol lg="4" md="12">
                 <MDBIcon icon="money-bill-alt" />{" "}
                 <span className="font-weight-bold">
                   ${Number(getProperty.price).toLocaleString()}
                 </span>
               </MDBCol>
-              <MDBCol lg="2" md="4">
+              <MDBCol lg="2" md="12">
                 <MDBIcon icon="bed" /> {getProperty.number_of_bedrooms} Beds
               </MDBCol>
-              <MDBCol lg="2" md="4">
+              <MDBCol lg="2" md="12">
                 <MDBIcon icon="bath" /> {getProperty.number_of_bathrooms} Baths
               </MDBCol>
-              <MDBCol lg="4" md="8">
+              <MDBCol lg="4" md="12">
                 <MDBIcon icon="shoe-prints" />{" "}
                 {Number(getProperty.square_feet).toLocaleString()}sqft
               </MDBCol>
@@ -54,8 +56,8 @@ function IndividualHouseInfo({ getProperty }) {
               <IndividualHouseForm />
             </MDBCol>
           </MDBRow>
+          <ImageSection />
         </div>
-        <ImagesModal getProperty={getProperty} />
       </MDBCard>
     </>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import IndividualHouseImage from "./IndividualHouseImage";
 import { MDBContainer } from "mdbreact";
 import IndividualHouseInfo from "./IndividualHouseInfo";
 import "../../components/globalStyles.css";
@@ -13,7 +12,6 @@ function HousePage({ properties, props }) {
     <>
       <section className="my-5">
         <MDBContainer>
-          <IndividualHouseImage getProperty={getProperty} />
           <IndividualHouseInfo getProperty={getProperty} />
         </MDBContainer>
       </section>

@@ -2,8 +2,8 @@ import React from "react";
 import homepagebg from "../../imgs/homepagebg.jpg";
 import "./styling/HomeImage.css";
 
-function HomeImage() {
+const HomeImage = () => {
   return <img className="HomeImage" src={homepagebg} alt="Home With Lights" />;
-}
+};
 
 export default HomeImage;

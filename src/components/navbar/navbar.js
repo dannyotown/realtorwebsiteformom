@@ -7,16 +7,21 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
 } from "mdbreact";
+import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const history = useHistory();
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
   return (
     <MDBNavbar dark expand="md" className="position-sticky">
-      <MDBNavbarBrand>
+      <MDBNavbarBrand
+        onClick={() => {
+          history.push("/");
+        }}
+      >
         <strong className="gbBlueFont">Jeanne Town</strong>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={toggleCollapse} />
@@ -40,7 +45,7 @@ const Navbar = () => {
           </MDBNavItem>
           <MDBNavItem>
             <div className="text-white m-3 font-weight-bold gbBlueFont">
-              Houses For Sale
+              Listed Properties
             </div>
           </MDBNavItem>
           <MDBNavItem>

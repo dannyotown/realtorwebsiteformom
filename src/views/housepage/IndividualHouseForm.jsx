@@ -13,7 +13,7 @@ const IndividualHouseForm = () => {
       />
       <MDBInput type="textarea" rows="2" label="Your message" />
       <div className="text-center mb-3">
-        <button className="btn-block z-depth-1a questionButton">
+        <button className="btn-block z-depth-1a questionButton mt-3">
           Send
           <MDBIcon far icon="paper-plane" className="ml-2" />
         </button>

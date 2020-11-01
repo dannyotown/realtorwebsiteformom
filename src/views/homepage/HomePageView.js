@@ -1,11 +1,14 @@
-import React from "react";
-import HomeImage from "./HomeImage";
+import React, { Suspense } from "react";
 import HomeBody from "./HomeBody";
+
+const HomePageImage = React.lazy(() => import("./HomeImage"));
 
 function HomePage({ houses }) {
   return (
     <>
-      <HomeImage />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomePageImage />
+      </Suspense>
       <HomeBody houses={houses} />
     </>
   );
