@@ -6,6 +6,8 @@ import Homepage from "./views/homepage/HomePageView.js";
 import HousePage from "./views/housepage/HousePageView.js";
 import api from "./components/axios";
 import Loading from "./components/loading/loading";
+import PropertyList from "./views/propertylist/PropertyList.js";
+import ContactMe from "./views/contactpage/ContactMe.js";
 
 function App() {
   const [properties, setProperties] = useState(null);
@@ -42,6 +44,20 @@ function App() {
             path="/property/:id"
             render={(props) => (
               <HousePage properties={properties} props={props} />
+            )}
+          />
+          <Route
+            exact
+            path="/properties"
+            render={(props) => (
+              <PropertyList properties={properties} props={props} />
+            )}
+          />
+          <Route
+            exact
+            path="/contactme"
+            render={(props) => (
+              <ContactMe properties={properties} props={props} />
             )}
           />
           <Footer />

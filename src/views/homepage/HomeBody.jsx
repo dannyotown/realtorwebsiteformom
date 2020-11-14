@@ -8,6 +8,7 @@ function HomeBody({ houses }) {
   const housing = houses;
   const [filterHousing, setFilterHousing] = useState(houses);
   const [getDropDown, setDropDown] = useState("zip_code");
+  console.log(houses);
 
   const onSearch = (e) => {
     const data = housing.filter((house) => {
@@ -22,7 +23,7 @@ function HomeBody({ houses }) {
   return (
     <>
       <MDBCard className="mb-5 bg-light">
-        <h2 className="text-center mt-5">Search For Houses</h2>
+        <h2 className="text-center mt-5">Search For Properties</h2>
         <div className="mx-auto w-75 mb-4 d-flex flex-row justify-content-center align-items-center">
           <select
             className="form-control form-control-lg bg-white"
@@ -34,9 +35,9 @@ function HomeBody({ houses }) {
             }}
             onBlur={dropDownOnChange}
           >
-            <option value="ZipCode">Zip Code</option>
-            <option value="Street">Street</option>
-            <option value="City">City</option>
+            <option value="zip_code">Zip Code</option>
+            <option value="address">Street</option>
+            <option value="city">City</option>
           </select>
           <MDBInput
             outline

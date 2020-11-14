@@ -21,6 +21,7 @@ const Navbar = () => {
         onClick={() => {
           history.push("/");
         }}
+        style={{ cursor: "pointer" }}
       >
         <strong className="gbBlueFont">Jeanne Town</strong>
       </MDBNavbarBrand>
@@ -38,12 +39,12 @@ const Navbar = () => {
           </MDBNavItem>
         </MDBNavbarNav>
         <MDBNavbarNav right>
-          <MDBNavItem>
-            <div className="text-white m-3 font-weight-bold gbBlueFont">
-              Contact Me
-            </div>
-          </MDBNavItem>
-          <MDBNavItem>
+          <MDBNavItem
+            onClick={() => {
+              history.push("/properties");
+            }}
+            style={{ cursor: "pointer" }}
+          >
             <div className="text-white m-3 font-weight-bold gbBlueFont">
               Listed Properties
             </div>
@@ -51,6 +52,16 @@ const Navbar = () => {
           <MDBNavItem>
             <div className="text-white m-3 font-weight-bold gbBlueFont">
               About Me
+            </div>
+          </MDBNavItem>
+          <MDBNavItem
+            onClick={() => {
+              history.push("/contactme");
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <div className="text-white m-3 font-weight-bold gbBlueFont">
+              Contact Me
             </div>
           </MDBNavItem>
         </MDBNavbarNav>
