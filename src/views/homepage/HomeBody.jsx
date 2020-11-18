@@ -8,7 +8,6 @@ function HomeBody({ houses }) {
   const housing = houses;
   const [filterHousing, setFilterHousing] = useState(houses);
   const [getDropDown, setDropDown] = useState("zip_code");
-  console.log(houses);
 
   const onSearch = (e) => {
     const data = housing.filter((house) => {
@@ -58,6 +57,7 @@ function HomeBody({ houses }) {
             isMarkerShown
             filterHousing={filterHousing}
             history={history}
+            className="test"
           />
         </MDBRow>
       </MDBContainer>

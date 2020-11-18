@@ -5,3 +5,7 @@
 .gbBlueFont {
   color: #012169 !important;
 }
+.gMap {
+  width: 90%;
+  height: 400px;
+}

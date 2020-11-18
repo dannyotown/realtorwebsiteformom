@@ -16,15 +16,15 @@ function App() {
     const fetchProperties = async () => {
       try {
         const { data } = await api.get("/property");
-        setProperties(data);
-        setDataLoaded(true);
+        setTimeout(() => {
+          setProperties(data);
+          setDataLoaded(true);
+        }, 2000);
       } catch (err) {
         console.log(err);
       }
     };
-    setTimeout(() => {
-      fetchProperties();
-    }, 2000);
+    fetchProperties();
   }, []);
 
   return (

@@ -16,7 +16,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <MDBNavbar dark expand="md" className="position-sticky">
+    <MDBNavbar light expand="md" className="position-sticky">
       <MDBNavbarBrand
         onClick={() => {
           history.push("/");

@@ -2,7 +2,7 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBInput } from "mdbreact";
 export const ContactMe = () => {
   return (
-    <MDBContainer className="m-5 mx-auto">
+    <MDBContainer className="mx-auto">
       <MDBRow className="p-5 m-5">
         <MDBCol md="6" className="mb-5 mx-auto">
           <form>
